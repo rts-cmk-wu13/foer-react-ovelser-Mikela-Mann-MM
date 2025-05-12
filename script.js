@@ -75,4 +75,7 @@ const checkeredGiantInfo = {
 const username = "Sofie"; 
 username ? console.log(`Velkommen tilbage, ${username}!`) : console.log("Velkommen gæst – log ind for en personlig oplevelse.");
 
+// en string vil altid blive evalueret til truety - en tom string vil evalueres til falsy
+/* let time = "frokost"
+time ? console.log("så hold dog den pause") : console.log("work work work"); */
 
