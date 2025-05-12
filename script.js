@@ -1,8 +1,7 @@
-/* // løs opgaverne her
+// løs opgaverne her 
 
-
-### opgave 8
-Saml de to objekter "checkeredGiantBasic" og "checkeredGiantTraits" til et samlet objekt "checkeredGiantInfo" ved hjælp af spread-operatoren.
+//parameters = placeholders 
+//arguments : actual values
 
 
 // Opgave 1 
@@ -11,17 +10,23 @@ const dog1 = dogs[1];
 const dog2 = dogs[2];
 console.log(dog1, dog2);
 
+// andet eksempel(resultatet bliver det samme): 
+// let [, dog1, dog2] = dogs
+// console.log(dog1, dog2)
+
 // Opgave 2
 
 const {name, breed, owner:{contact}} = cat; 
-console.log(name, breed, contact);*/
+console.log(name, breed, contact);
 
 // Opgave 3 
 
-function individualData({name, favoriteToys}) {
+function individualCatData({name, favoriteToys}) {
     console.log(name, favoriteToys); 
 }
-individualData(cat);
+individualCatData(cat);
+
+
 
 // Opgave 4
 
@@ -33,13 +38,18 @@ console.log(dogA, dogB, otherDogs);
 
 
 const dogsWithC = otherDogs.filter(dog => dog.startsWith('C'));
+/* det kan også skrives sådan:
+ const dogsWithC = otherDogs.filter(function(dog)
+{return dog.startsWith('C')
+}); */
 console.log(dogsWithC);
 
 // Opgave 6 
-const {breed, ...rest} = cat;
-console.log(breed, rest);
+//breed: catBreed (her omdøber jeg bare breed til catBreed)
+const {breed: catBreed, ...otherInformation} = cat;
+console.log(catBreed, otherInformation);
 
-// Opgave 7 
+// Opgave 7 //..spread efter =, når det som i opg 6 står før = er det ...rest
 const rabbitBreeds = [...smallRabbitBreeds, ...largeRabbitBreeds];
 console.log(rabbitBreeds);
 
@@ -57,6 +67,7 @@ const checkeredGiantInfo = {
   westernMovies.forEach((westernMovie) => {
     const director = westernMovie?.details?.director;
     console.log(director ?? "Ukendt instruktør");
+    //console.log(westernMovie?.details?.director || "Ukendt instruktør");
   })
 
   // Opgave 10
